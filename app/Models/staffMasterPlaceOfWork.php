@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class staffMasterPlaceOfWork extends Model
 {
     use HasFactory;
+    protected $fillable=['name','status','order'];
 }

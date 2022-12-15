@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('staff_master_subjects', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->enum('status',[0,1])->default(1);
-            $table->integer('order')->nullable();
+            $table->boolean('status')->default(true);
+            $table->integer('orderBy')->nullable();
             $table->timestamps();
         });
     }

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 
 class roleSeeder extends Seeder
 {
@@ -15,9 +15,13 @@ class roleSeeder extends Seeder
      */
     public function run()
     {
-        $role=Role::create([
-            'name'=>'admin'
-        ]);
-        $role->givePermissionTo('all useage');
+        $roles=[
+            [ 'name'=>'super admin'],
+            [ 'name'=>'admin'],
+            [ 'name'=>'staff'],
+            [ 'name'=>'students'],
+            [ 'name'=>'customer']
+        ];
+        Role::insert($roles);
     }
 }
